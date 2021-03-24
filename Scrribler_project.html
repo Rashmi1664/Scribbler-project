@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- TODO: Include Font Awesome file here -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    
+
+    <!-- TODO: Include Google Fonts file here -->
+    <link href="https://fonts.googleapis.com/css?family=Montez|Roboto|Ubuntu+Mono&display=swap" rel="stylesheet">
+
+
+
+    <!-- Bootstrap for modals-->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+        <style>
+
+#pageTitle{
+font-family: 'Montez', cursive;
+font-size: 50px;
+color: #112fb4;
+margin: auto;
+text-decoration: none;
+margin: 10px 10px 0px 10px;    
+}
+
+.sub-heading {
+  font-family: 'Ubuntu Mono';
+  margin-left: 10px;
+}
+
+.modal-signin-container{
+  border: 10px solid white;
+}
+
+.signinupbutton{
+  width: 120px;
+  padding: 10px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 90%;
+  background: #0000ff;
+  color: #fff;
+  float: right;                  
+  
+  margin: 10px 10px 0px 0px;
+  font-family: Arial, Helvetica, sans-serif;
+ }
+
+body {
+    background-image: url("background.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  background-size: cover;
+}
+ .bg-post{
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+ }
+
+ .postbutton{
+  height: 50px;
+  width: 160px;
+  padding: 10px;
+  border-radius: 2px;
+  
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 100%;
+  background: #DAB641;
+  color:black;
+  float: center;                  
+  
+  margin: 10px 10px 0px 0px;
+  font-family: Arial, Helvetica, sans-serif;
+ }
+
+ body{
+    position : relative;
+     bottom:0;
+}
+
+.heading-content{
+   text-align: center;
+   font-size: 25px;
+   font-weight: bolder;
+}
+
+.author{
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+.author-name{
+    font-family: 'Courier New', Courier, monospace;
+   font-weight: bold;
+   font-size: 20px;
+   width: 50%;
+}
+
+#comments{
+    background-color: lightgrey;
+    width: 100%;
+    margin: 10px;
+    padding: 10px;
+}
+
+.comment{
+    background-color: white;
+    margin: 10px;
+    padding: 10px;
+}
+
+#edit-button{
+    margin-left: 500px;
+    float: right;
+    height: 40px;
+    width: 100px;
+    padding: 5px;
+    border-radius: 2px;
+}
+
+.post-content{
+    word-wrap: break-word;
+    margin-top: 20px;
+}
+
+#like-button{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    height: 40px;
+    width: 100px;
+    padding: 5px;
+    border-radius: 2px;
+}
+
+#comment-button{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 40px;
+    width: 120px;
+    padding: 5px;
+    border-radius: 2px;
+}
+
+#showCount{
+    margin-bottom: 30px;
+
+}
+
+#allCommentsHeading{
+    font-weight: bolder;
+    padding-top: 10px;
+}
+
+.comment-container{
+    min-height: 0px;
+    overflow: hidden;
+}
+body{
+    background-color: #ffeedd;
+}
+
+.container{
+    padding-top: 4px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card-new{
+    border-radius: 25px;
+    height: 150px;
+    display: flex;
+    flex-direction: row;
+    border-radius: 30px;
+    margin: 10px;
+    width: 500px;
+    transition: box-shadow .3s;
+  
+}
+
+.card-new:hover {
+    box-shadow: 0 0  5px 5px rgba(33,33,33,.2); 
+  }
+
+.side-square-wrapper{
+    height: 150px;
+    width: 17%;
+    text-align: center;
+    background-color: white;
+    padding: 40px 4px;
+    font-size: 16px;
+    font-weight: bold;
+    color:gray;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.custom-card-body{
+    height: 150px; 
+    background-color: #DCDCDC;
+    width: 83%;
+    padding: 5px;
+    font-size: 14px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px; 
+}
+
+.card-body-heading{
+   color:gray;
+   font-size: 16px;
+   font-weight: 500;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   padding-bottom: 5px;
+   
+}
+
+.post-text{
+    overflow: hidden; 
+    white-space: normal; 
+
+    height: 4.8em;  
+    text-overflow: -o-ellipsis-lastline; 
+}
+
+.trash-button{
+    float: right;
+    padding-right: 10px;
+    size: 10px;
+    cursor: pointer;
+}
+
+.ellipsis{
+   margin-left: 370px;
+   color: grey;
+    cursor: pointer;
+    padding-right: 120px;
+    margin-bottom: 4px; 
+ 
+  
+}
+
+        </style>
+</head>
+
+<body>
+    <!-- TODO: Include all your code for the header and home page here -->
+    <div class="header">
+        <div class="bg-signin">
+            <button type="button" class="signinupbutton" data-toggle="modal" data-target="#exampleModal"
+                id="sign-in-button">
+                Sign In
+            </button>
+
+            <button type="button" class="signinupbutton" data-toggle="modal" data-target="#exampleModalSignUp"
+                id="sign-up-button">
+                Sign Up
+            </button>
+        </div>
+
+        <a id="pageTitle" class="logo-title">ScriBBler</a>
+        <p class="sub-heading" style="font-family: 'Montez', cursi;">Explore, Imagine, Create</p>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="exampleModalLabel"
+                            style="color:grey;font-family: 'Roboto', sans-serif;font-size: larger;">Welcome Back !</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="exampleInputUsername">Username</label>
+                                <input type="text" class="form-control" id="exampleInputUsername"
+                                    aria-describedby="usernameHelp" placeholder="Enter your username"
+                                    style="background-color :#DCDCDC ;" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Password</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1"
+                                    placeholder="Enter your password" style="background-color :#DCDCDC ;" required>
+                            </div>
+                            <div class="modal-signin-container">
+                                <button type="submit" class="btn btn-success btn-block">Sign In</button>
+                            </div>
+                            <div class="modal-footer border-top-0 d-flex justify-content-center">
+                                Not a member ? <a data-target="#exampleModalSignUp" data-dismiss="modal"
+                                    data-toggle="modal" href="#signup-form"> Sign Up</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalSignUp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="exampleModalLabel"
+                            style="color:grey;font-family: 'Roboto', sans-serif;font-size: larger;">Get Started</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Enter your name"
+                                    style="background-color :   #DCDCDC ;" required>
+
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">Username</label>
+                                <input type="text" class="form-control" id="exampleInputUsername1"
+                                    aria-describedby="emailHelp" placeholder="Enter your username"
+                                    style="background-color :#DCDCDC ;" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Password</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1"
+                                    placeholder="Enter your password" style="background-color :#DCDCDC ;" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Confirm Password</label>
+                                <input type="password" class="form-control" id="exampleInputPassword2"
+                                    placeholder="Re-enter your Password" style="background-color :#DCDCDC ;" required>
+                            </div>
+
+                            <div class="modal-signin-container">
+                                <button type="submit" class="btn btn-success btn-block">Sign Up</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="posts">
+        <div class="bg-post">
+            <button type="button" class="postbutton" onclick="window.location.href = 'bloglist.html';">
+                All Posts
+            </button>
+            <button type="button" class="postbutton" data-toggle="modal" data-target="#createPost"
+                id="create-post-button">
+                Create Post
+            </button>
+        </div>
+
+        <div class="post-buttons">
+            <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" id="createPost">
+                <div class="modal-dialog  modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title"
+                                style="color:grey;font-family: 'Roboto', sans-serif;font-size: larger;">
+                                Pen
+                                Your Post</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <form>
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label for="title">Title</label>
+                                    <input type="text" class="form-control" id="title"
+                                        placeholder="Enter title of your post" style="background-color :  #DCDCDC ;"
+                                        required>
+
+                                </div>
+                                <div class="form-group">
+                                    <label for="content">Contents</label>
+                                    <textarea rows="10" cols="50" class="form-control" id="content"
+                                        placeholder="Enter the contents of your post"
+                                        style="background-color : #DCDCDC;" required></textarea>
+                                </div>
+                            </div>
+                            <div class="modal-footer border-top-0 d-flex justify-content-center">
+                                <button type="submit" class="btn btn-success" style="width: 100px;">Create</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script>
+    const queryString = new Array();
+let editMode = false;
+let num = 0;
+
+function onEdit() {
+        num += 1;
+        if (!editMode) {
+                document.getElementById('edit-heading').style.borderWidth = '2px';
+                document.getElementById('edit-heading').style.borderStyle = 'solid';
+                document.getElementById('edit-heading').style.borderColor = 'red';
+
+                document.getElementById('edit-contenttext').style.borderWidth = '2px';
+                document.getElementById('edit-contenttext').style.borderStyle = 'solid';
+                document.getElementById('edit-contenttext').style.borderColor = 'red';
+
+                document.getElementById('edit-button').innerHTML =
+                        'Save<i class="fa fa-save" style="padding-left: 4px;"></i></button>';
+                editMode = true;
+        } else {
+                if (num === 2) {
+                        var temp = document.getElementById('edit-heading');
+                        document.getElementById('edit-heading').innerHTML = `<span>UPDATED:</span>${temp.innerHTML}`;
+
+                        var temp = document.getElementById('edit-contenttext');
+                        document.getElementById('edit-contenttext').innerHTML = `<div>UPDATED:</div>${temp.innerHTML}`;
+                }
+
+                document.getElementById('edit-contenttext').style.border = 'none';
+                document.getElementById('edit-heading').style.border = 'none';
+
+                document.getElementById('edit-button').innerHTML =
+                        'Edit<i class="fa fa-edit" style="padding-left: 4px;"></i>';
+                document.getElementById('edit-button').disabled = true;
+        }
+}
+
+window.onload = function() {
+        if (queryString.length == 0) {
+                if (window.location.search.split('?').length > 1) {
+                        const params = window.location.search.split('?')[1].split('&');
+                        for (let i = 0; i < params.length; i++) {
+                                const key = params[i].split('=')[0];
+                                const value = decodeURIComponent(params[i].split('=')[1]);
+                                queryString[key] = value;
+                        }
+                }
+        }
+        if (queryString.heading != null && queryString.author != null) {
+                const { heading } = queryString;
+                const { author } = queryString;
+                const { content } = queryString;
+                document.getElementsByClassName('heading-content')[0].innerHTML = heading;
+                document.getElementsByClassName('author-name')[0].innerHTML = author;
+                document.getElementsByClassName('post-content')[0].innerHTML = content;
+        }
+        document.getElementById('comments').style.visibility = 'hidden';
+};
+
+let count = 0;
+function countLikes() {
+        count = parseInt(count) + parseInt(1);
+        const divData = document.getElementById('showCount');
+        const likeButton = document.getElementById('likeButton');
+        likeButton.innerHTML = 'Liked';
+        if (count == 1) {
+                divData.innerHTML = `${count} person likes this !`;
+        } else {
+                divData.innerHTML = `${count} people like this !`;
+        }
+}
+
+const comments = [];
+
+function addingComment(item, index) {
+        const temp = document.getElementById('comments').innerHTML;
+        document.getElementById('comments').innerHTML = `<div class="comment">${item}</div>`;
+        // + `</br>`;
+        document.getElementById('comments').innerHTML += `${temp}</br>`;
+        comments.pop();
+}
+
+function addComment(comment) {
+        if (comment.value !== '') {
+                document.getElementById('comments').style.visibility = 'visible';
+                var comment = comment.value;
+                comments.unshift(comment);
+                $('#comment').val('');
+                comments.forEach(addingComment);
+                $(document).scrollTop($(document).height());
+        }
+}
+
+function removeCard(card) {
+        const delCard = document.getElementById(card);
+        delCard.parentNode.removeChild(delCard);
+}
+
+function openPost(author, heading, content) {
+        const url = `../html/post.html?heading=${encodeURIComponent(heading.innerText)}&author=${encodeURIComponent(
+                author.innerText
+        )}&content=${encodeURIComponent(content.innerText)}`;
+        window.location.href = url;
+}
+</script>
+</body>
+
+</html>
